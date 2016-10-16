@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Application
+{% endblock %}
+<!doctype html>
+
+{% block content %}
+<div class="row">
+    <div class="col-xs-12 col-md-offset-3 col-md-6 text-center">
+        <p>
+        Thank you {{ firstname }} {{ lastname }} for applying for a {{ jobpos }} position
+        at our company! Your target salary is {{ salary }}.
+        </p>
+
+    </div>
+</div>
+{% endblock %}

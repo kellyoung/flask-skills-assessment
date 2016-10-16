@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+<!doctype html>
+<html>
+<head>
+    {% block title %}Application Form{% endblock %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container">
+    {% block content %}
+    <div id="introrow" class="row">
+        <div class="col-xs-12 col-md-offset-4 col-md-4 text-center">
+            <h2>Apply Today!</h2>
+            <div id="instructions">
+                <p>Hello, prospective applicant! We are looking to hire. Please enter your 
+                information in all of the fields below. Note: Ideal Salary should be given
+                as a number. We look forward to hearing from you.</p>
+            </div>
+        </div>
+    </div>
+    <div id="formrow" class="row">
+        <div class="col-xs-12 col-md-offset-4 col-md-4 text-center">
+           <form action="/application" method="POST">
+                <label for="firstname">First Name: </label><br>
+                <input id="firstname" name="firstname" type="text" required><br>
+
+                <label for="lastname">Last Name: </label><br>
+                <input id="lastname" name="lastname" type="text" required><br>
+
+                <label for="salary">Ideal Salary: </label><br>
+                <input id="salary" name="salary" type="text" required><br>
+
+                <label for="jobpos">Which job are you applying for? </label><br>
+                <select id="jobpos" name="jobpos" required>
+                    <option value="software">Software Engineer</option>
+                    <option value="quality">QA Engineer</option>
+                    <option value="product">Product Manger</option>
+                </select><br><br>
+                 <input id="button" type="submit" name="submit" value="Submit Application">
+           </form> 
+           <a href="/">Go to homepage.</a>
+        </div>
+    </div>
+    {% endblock %}
+</div>
+
+</body>
+</html>
